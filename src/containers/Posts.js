@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 
 import PostCard from '../components/PostCard'
-import PostForm from './PostForm'
 import { getPosts } from '../actions/posts.js'
 
 
@@ -14,12 +13,11 @@ class Posts extends Component{
 
   render(){
     return(
-      <div>
+      <div className="container">
         <h3> POSTS </h3>
           {this.props.posts.map(post =>
             <PostCard key={post.id}
             post={post} /> )}
-            <PostForm />
         </div>
       )
     }

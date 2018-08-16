@@ -11,6 +11,13 @@ const setPosts = posts => {
   }
 }
 
+const setPost = post => {
+  return {
+    type:'GET_POST_SUCCESS',
+    post
+  }
+}
+
 const addPost = post => {
   return {
     type: 'CREATE_POST_SUCCESS',
@@ -24,6 +31,15 @@ export const getPosts = () => {
     return fetch(`${API_URL}/posts`)
     .then(resp => resp.json())
     .then(posts => dispatch(setPosts(posts)))
+    .catch(error => console.log(error))
+  }
+}
+
+export const getPost = (id) => {
+  return dispatch => {
+    return fetch(`${API_URL}/posts/${id}`)
+    .then(resp => resp.json())
+    .then(post => dispatch(setPost(post)))
     .catch(error => console.log(error))
   }
 }

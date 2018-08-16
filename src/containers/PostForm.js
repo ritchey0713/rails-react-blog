@@ -6,6 +6,7 @@ import { createPost } from '../actions/posts'
 
 class PostForm extends Component {
 
+
   handleOnChange = (e) => {
       const { name, value } = e.target
       const currentPostData = Object.assign({}, this.props.postFormData, {
@@ -17,6 +18,7 @@ class PostForm extends Component {
   handleOnSubmit = (e) => {
     e.preventDefault()
     this.props.createPost(this.props.postFormData)
+    this.props.history.push('/')
   }
 
   render(){
