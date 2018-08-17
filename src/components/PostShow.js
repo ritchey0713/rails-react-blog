@@ -2,13 +2,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getPost } from '../actions/posts.js'
+import { deletePost } from '../actions/posts.js'
 
 
 class PostShow extends Component{
+
   componentDidMount(){
-    const { id } = this.props.match.params
+const { id } = this.props.match.params
     this.props.getPost(id)
   }
+
+handleOnClick = () => {
+const { id } = this.props.match.params
+this.props.deletePost(id)
+this.props.history.push('/')
+}
 
   render(){
     return(
@@ -16,7 +24,7 @@ class PostShow extends Component{
       <div className="container">
         <h3>Title: { this.props.posts.title }</h3> <br />
         SubTitle: {this.props.posts.subtitle}
-
+        <button onClick={this.handleOnClick}>Delete this post!</button>
       </div>
     )
   }
@@ -27,4 +35,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { getPost })(PostShow)
+export default connect(mapStateToProps, { getPost,
+  deletePost
+ })(PostShow)

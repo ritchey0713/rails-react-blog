@@ -12,7 +12,7 @@ const PostCard = ({ post }) => (
   <p className="card_description">{post.category}</p>
   <p className="card_description">{post.content}</p>
   <button className='button'><Link to={`/posts/${post.id}`}>
-  <PostShow id={post.id} />
+  Details!
   </Link></button>
   <button>!DELETE!</button>
   <hr />

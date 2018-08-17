@@ -25,6 +25,13 @@ const addPost = post => {
   }
 }
 
+const deleteItem = post => {
+  return {
+    type: 'DELETE_POST',
+    post
+  }
+}
+
 //async actions
 export const getPosts = () => {
   return dispatch => {
@@ -59,5 +66,19 @@ export const createPost = post => {
       dispatch(resetPostForm())
     })
     .catch(error => console.log(error))
+  }
+}
+
+export const deletePost = post => {
+  return dispatch => {
+    return fetch(`${API_URL}/posts/${post}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({post: post})
+    })
+    .then(resp => resp.json())
+    .then(post => dispatch(deleteItem(post)))
   }
 }
