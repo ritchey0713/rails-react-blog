@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import PostCard from '../components/PostCard'
 import { getPosts } from '../actions/posts.js'
+import './Posts.css'
 
 
 class Posts extends Component{
@@ -14,10 +15,11 @@ class Posts extends Component{
   render(){
     return(
       <div className="container">
-        <h3> POSTS </h3>
+        <h3 className="post_header"> POSTS </h3>
           {this.props.posts.map(post =>
             <PostCard key={post.id}
-            post={post} /> )}
+            post={post}
+             /> )}
         </div>
       )
     }

@@ -1,27 +1,29 @@
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getPost } from '../actions/posts.js'
 
 
 class PostShow extends Component{
-
   componentDidMount(){
-    this.props.getPost()
+    const { id } = this.props.match.params
+    this.props.getPost(id)
   }
 
   render(){
-    console.log(this)
     return(
 
       <div className="container">
-      Title: {this.props.title}
+        <h3>Title: { this.props.posts.title }</h3> <br />
+        SubTitle: {this.props.posts.subtitle}
+
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {posts: state.posts}
+  return {posts: state.posts }
 }
 
 

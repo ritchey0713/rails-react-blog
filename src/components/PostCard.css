@@ -11,12 +11,12 @@
 
 }
 
-.card__title {
+.card_title {
     font-size: 2rem;
     padding: .5rem;
     text-align: center;
 }
-.card__description {
+.card_description {
     padding: .5rem;
     line-height: 1.6em;
     text-align: center;

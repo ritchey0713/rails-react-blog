@@ -2,7 +2,6 @@ import { resetPostForm } from './postFormData'
 
 const API_URL = process.env.REACT_APP_API_URL
 
-
 //action creators
 const setPosts = posts => {
   return {
@@ -12,6 +11,7 @@ const setPosts = posts => {
 }
 
 const setPost = post => {
+  console.log(post)
   return {
     type:'GET_POST_SUCCESS',
     post
@@ -40,7 +40,7 @@ export const getPost = (id) => {
     return fetch(`${API_URL}/posts/${id}`)
     .then(resp => resp.json())
     .then(post => dispatch(setPost(post)))
-    .catch(error => console.log(error))
+
   }
 }
 
