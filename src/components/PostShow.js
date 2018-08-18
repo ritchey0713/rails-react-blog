@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { getPost } from '../actions/posts.js'
 import { deletePost } from '../actions/posts.js'
 
@@ -24,6 +25,7 @@ this.props.history.push('/')
       <div className="container">
         <h3>Title: { this.props.posts.title }</h3> <br />
         SubTitle: {this.props.posts.subtitle}
+        <button> Edit Posting</button>
         <button onClick={this.handleOnClick}>Delete this post!</button>
       </div>
     )
