@@ -14,7 +14,6 @@ const PostCard = ({ post }) => (
   <button className='button'><Link to={`/posts/${post.id}`}>
   Details!
   </Link></button>
-  <button>!DELETE!</button>
   <hr />
   </div>
 </div>

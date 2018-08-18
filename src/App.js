@@ -21,8 +21,7 @@ class App extends Component {
           <Route path ='/posts/new' component={PostForm} />
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
-          <Route
-          path='/posts/:id' component={PostShow} />
+          <Route path='/posts/:id' component={PostShow} />
 
         </div>
       </Router>

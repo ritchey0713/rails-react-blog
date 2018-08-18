@@ -25,7 +25,7 @@ this.props.history.push('/')
       <div className="container">
         <h3>Title: { this.props.posts.title }</h3> <br />
         SubTitle: {this.props.posts.subtitle}
-        <button> Edit Posting</button>
+        <Link > <button> Edit Posting </button> </ Link>
         <button onClick={this.handleOnClick}>Delete this post!</button>
       </div>
     )
